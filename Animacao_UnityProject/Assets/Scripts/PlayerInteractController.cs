@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Interactables;
+using UnityEngine;
 
 namespace Scripts
 {

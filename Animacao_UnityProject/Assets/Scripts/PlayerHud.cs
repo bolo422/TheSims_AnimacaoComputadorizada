@@ -21,15 +21,20 @@ namespace Scripts
         
         [SerializeField] private Text _interactText;
 
-        public Text InteractText
+        public String InteractText
         {
-            get => _interactText;
-            set => _interactText = value;
+            get => _interactText.text;
+            set => _interactText.text = value;
         }
 
         private void Awake()
         {
             _instance = this;
+        }
+
+        private void Start()
+        {
+            InteractText = "";
         }
     }
 }

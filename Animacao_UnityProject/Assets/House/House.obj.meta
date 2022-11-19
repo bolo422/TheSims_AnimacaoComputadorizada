@@ -3,7 +3,102 @@ guid: cfc19da3f0efde44fab56d739bb6cf18
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 2919c746cc282dc4d9b292b168ff4e88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue
+    second: {fileID: 2100000, guid: ad1be70ad9ffe2b409c9438b88ac22cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark_blue
+    second: {fileID: 2100000, guid: 91e5277e477edd04fbfa6128268c546f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor1
+    second: {fileID: 2100000, guid: 8a1330e63da3fa240bf5d11d3e718be6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor2
+    second: {fileID: 2100000, guid: 6672e87adf3f6ff43b7d1f8ae3b5815d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor3
+    second: {fileID: 2100000, guid: 2a1aa6577641dc548ac6aae9be0f27e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor4
+    second: {fileID: 2100000, guid: 82d0294168daadc48a547188dc5fedbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 327084250a2310e4ead7b1cc457814b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kichen
+    second: {fileID: 2100000, guid: c90eac85fe5eeea4d8fc09ddf9859eb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kichen2
+    second: {fileID: 2100000, guid: d72dc8ec102fa4d43bf4c9d304d26c87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light_Black
+    second: {fileID: 2100000, guid: 53a5a9b950e15a842be2503bee6fa619, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillow
+    second: {fileID: 2100000, guid: 31601f7f82081a244b1fa2e99f597b67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Storage
+    second: {fileID: 2100000, guid: 7781bbffd255ac243a6762700bb0be66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Storage2
+    second: {fileID: 2100000, guid: dc7db130104d7de44a93c9fd559d787b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table
+    second: {fileID: 2100000, guid: 2ff9dc6066f2a5e42aba7dfde67a25b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: ab51b979c1ab6b343a783450c70cde30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 80dd2e3a6ffba0e48bbddab8a8780918, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 0acb58353c691424b9f877620c5f9fd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray
+    second: {fileID: 2100000, guid: 10f61749ce0715a4da1267c0eeb5e950, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
