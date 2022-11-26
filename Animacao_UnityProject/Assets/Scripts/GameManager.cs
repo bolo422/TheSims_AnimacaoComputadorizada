@@ -54,8 +54,19 @@ public class GameManager : MonoBehaviour
         HygieneValue = _motives[MotiveType.Hygiene].Value;
         BladderValue = _motives[MotiveType.Bladder].Value;
         
-        if (HygieneValue < 0.5f)
+        if (HygieneValue < 30.0f)
         {
+            badHygieneParticles.maxParticles = 800;
+            badHygieneParticles.Play();
+        }
+        else if (HygieneValue < 60.0)
+        {
+            badHygieneParticles.maxParticles = 300;
+            badHygieneParticles.Play();
+        }
+        else if (HygieneValue < 80)
+        {
+            badHygieneParticles.maxParticles = 100;
             badHygieneParticles.Play();
         }
         else
