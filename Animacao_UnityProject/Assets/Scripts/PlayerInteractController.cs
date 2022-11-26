@@ -12,8 +12,6 @@ namespace Scripts
         public bool CanMove => _canMove;
         
         private CharacterController _characterController;
-        private Vector3 _oldPosition;
-        private Quaternion _oldRotation;
         private Animator _animator;
 
         public Interactable CurrentInteractable
@@ -50,11 +48,10 @@ namespace Scripts
                 if (_currentInteractable != null && _canMove)
                 {
                     _characterController.enabled = false;
-                    _oldPosition = transform.position;
-                    _oldRotation = transform.rotation;
+                    transform.position = _currentInteractable.gripPoint.transform.position;
+                    transform.rotation = _currentInteractable.gripPoint.transform.rotation;
                     _currentInteractable.Interact();
-                    _animator.SetBool(_currentInteractable.AnimatorParameter, true);
-                    _animator.Play("Eating");
+                    _animator.Play(_currentInteractable.AnimationName);
                     StartCoroutine(cantMoveCoroutine(_currentInteractable.AnimationTime));
                 }
             }
@@ -64,8 +61,6 @@ namespace Scripts
         {
             _canMove = false;
             yield return new WaitForSeconds(time+0.2f);
-            transform.position = _oldPosition;
-            transform.rotation = _oldRotation;
             _characterController.enabled = true;
             _canMove = true;
         }

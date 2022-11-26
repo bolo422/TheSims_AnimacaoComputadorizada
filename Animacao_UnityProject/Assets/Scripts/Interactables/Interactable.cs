@@ -19,8 +19,8 @@ namespace Interactables
         [SerializeField] private float _animationTime;
         public float AnimationTime => _animationTime;
 
-        [SerializeField] private String _animatorParameter;
-        public String AnimatorParameter => _animatorParameter;
+        [SerializeField] private String _animationName;
+        public String AnimationName => _animationName;
         
         private void OnTriggerEnter(Collider other)
         {
@@ -47,6 +47,11 @@ namespace Interactables
                 decreaseAmount, 
                 decreaseTime, 
                 false);
+
+            if (GetComponent<ActivateOtherAnimation>() != null)
+            {
+                GetComponent<ActivateOtherAnimation>().Activate();
+            }
         }
     }
 }
