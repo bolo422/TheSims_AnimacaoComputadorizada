@@ -6,13 +6,13 @@ namespace Scripts
     {
         private MotiveType _motiveType;
         private float _value;
-        private int _minValue;
-        private int _maxValue;
+        private int _minValue = 0;
+        private int _maxValue = 100;
 
         public Motive(MotiveType motiveType)
         {
             _motiveType = motiveType;
-            _value = 100;
+            _value = _maxValue;
         }
         
         public MotiveType MotiveType
@@ -24,7 +24,27 @@ namespace Scripts
         public float Value
         {
             get => _value;
-            set => this._value = value; //Mathf.Clamp(value, _minValue, _maxValue);
         }
+        
+        
+        public bool AddValue(float value)
+        {
+            _value += value;
+            if (_value > _maxValue)
+            {
+                _value = _maxValue;
+                return true;
+            }
+            if(_value < _minValue)
+            {
+                _value = _minValue;
+                return true;
+            }
+            return false;
+        }
+
+        public int MinValue => _minValue;
+
+        public int MaxValue => _maxValue;
     }
 }

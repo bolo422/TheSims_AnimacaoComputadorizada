@@ -15,6 +15,12 @@ namespace Interactables
         public MotiveType deceraseMotive;
         public float decreaseAmount;
         public int decreaseTime;
+
+        [SerializeField] private float _animationTime;
+        public float AnimationTime => _animationTime;
+
+        [SerializeField] private String _animatorParameter;
+        public String AnimatorParameter => _animatorParameter;
         
         private void OnTriggerEnter(Collider other)
         {

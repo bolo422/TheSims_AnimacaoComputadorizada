@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float HygieneValue;
     [SerializeField] private float BladderValue;
 
+    public int hyperMode;
+
 
     private void Awake()
     {
@@ -74,7 +76,12 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         float increment = totalAmount / totalTime * 0.2f;
         totalincremented += increment;
-        motive.Value += increment * multiplier;
+
+        if (motive.AddValue(increment * multiplier * hyperMode))
+        {
+            yield break;
+        }
+        
         if (totalincremented < totalAmount)
         {
             StartCoroutine(AddToMotiveByTime(motive, totalAmount, totalTime, multiplier, totalincremented));
@@ -82,7 +89,6 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("Finished");
-
         }
     }
 
@@ -105,8 +111,8 @@ public class GameManager : MonoBehaviour
         }
     }*/
 
-    public void AddToMotiveValue(Motive motive, int value)
-    {
-        motive.Value += value;
-    }
+    // public void AddToMotiveValue(Motive motive, int value)
+    // {
+    //     motive.Value += value;
+    // }
 }

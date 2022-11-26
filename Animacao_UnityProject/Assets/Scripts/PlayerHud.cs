@@ -35,6 +35,9 @@ namespace Scripts
         private void Start()
         {
             InteractText = "";
+            
+            float hungerValue = GameManager.Instance.Motives[MotiveType.Hunger].Value;
+            
         }
     }
 }
