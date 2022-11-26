@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float EnergyValue;
     [SerializeField] private float HygieneValue;
     [SerializeField] private float BladderValue;
+    [SerializeField] private ParticleSystem badHygieneParticles;
     
     private bool fastMode;
     public void ToggleFastMode(){fastMode = !fastMode;}
@@ -46,17 +47,21 @@ public class GameManager : MonoBehaviour
         _motives.Add(MotiveType.Bladder, new Motive(MotiveType.Bladder));
     }
 
-    void Start()
-    {
-        //foreach (var motive in _motives) StartCoroutine(AddToMotiveByTime(motive.Value, 1.0f, 0, 10.0f, true));
-    }
-
     private void Update()
     {
         HungerValue = _motives[MotiveType.Hunger].Value;
         EnergyValue = _motives[MotiveType.Energy].Value;
         HygieneValue = _motives[MotiveType.Hygiene].Value;
         BladderValue = _motives[MotiveType.Bladder].Value;
+        
+        if (HygieneValue < 0.5f)
+        {
+            badHygieneParticles.Play();
+        }
+        else
+        {
+            badHygieneParticles.Stop();
+        }
     }
 
     public void AddToMotiveValueByTime(Motive motive, float totalAmount, float totalTime, bool positive)
