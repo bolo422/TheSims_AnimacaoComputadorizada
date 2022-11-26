@@ -19,12 +19,23 @@ namespace Scripts
             }
         }
         
-        [SerializeField] private Text _interactText;
+        [SerializeField] private GameObject _interactText;
 
         public String InteractText
         {
-            get => _interactText.text;
-            set => _interactText.text = value;
+            get => _interactText.GetComponentInChildren<Text>().text;
+            set
+            {
+                _interactText.GetComponentInChildren<Text>().text = value;
+                if(value != "")
+                {
+                    _interactText.SetActive(true);
+                }
+                else
+                {
+                    _interactText.SetActive(false);
+                }
+            }
         }
 
         private void Awake()
