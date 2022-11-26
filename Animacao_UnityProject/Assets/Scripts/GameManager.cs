@@ -31,8 +31,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float EnergyValue;
     [SerializeField] private float HygieneValue;
     [SerializeField] private float BladderValue;
-
-    public int hyperMode;
+    
+    private bool fastMode;
+    public void ToggleFastMode(){fastMode = !fastMode;}
 
 
     private void Awake()
@@ -58,13 +59,6 @@ public class GameManager : MonoBehaviour
         BladderValue = _motives[MotiveType.Bladder].Value;
     }
 
-    /*public void AddToMotiveValueByTime(Motive motive, float increment, float totalAmount, int multiplier, float incrementSplatter, bool infinite)
-    {
-        increment /= incrementSplatter;   
-        Debug.Log("Started");
-        StartCoroutine(AddToMotiveByTime(motive, increment, totalAmount, 0, infinite, multiplier));
-    }*/
-
     public void AddToMotiveValueByTime(Motive motive, float totalAmount, float totalTime, bool positive)
     {
         Debug.Log("Started");
@@ -77,42 +71,13 @@ public class GameManager : MonoBehaviour
         float increment = totalAmount / totalTime * 0.2f;
         totalincremented += increment;
 
-        if (motive.AddValue(increment * multiplier * hyperMode))
+        if (motive.AddValue(increment * multiplier * (fastMode ? 3 : 1)))
         {
             yield break;
         }
-        
         if (totalincremented < totalAmount)
         {
             StartCoroutine(AddToMotiveByTime(motive, totalAmount, totalTime, multiplier, totalincremented));
         }
-        else
-        {
-            Debug.Log("Finished");
-        }
     }
-
-    // tempo = (totalAmount / increment ) * 0.2f
-    // x = (20 / 0,375) * 0.2f
-    // 10,6 = (20 / x) * 0.2f
-    // x = (20 / 10,6) * 0.2f
-    
-    /*private IEnumerator AddToMotiveByTime(Motive motive, float increment, float totalAmount, float totalIncremented, bool infinite, int multiplier) {
-        yield return new WaitForSeconds(0.2f);
-        totalIncremented+=increment;
-        motive.Value += increment * multiplier;
-        if (infinite || totalIncremented < totalAmount)
-        {
-            //Debug.Log("totalIncremented: " + totalIncremented);
-            StartCoroutine(AddToMotiveByTime(motive, increment, totalAmount, totalIncremented, infinite, multiplier));
-        }
-        else
-        {
-        }
-    }*/
-
-    // public void AddToMotiveValue(Motive motive, int value)
-    // {
-    //     motive.Value += value;
-    // }
 }
